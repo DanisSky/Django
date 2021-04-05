@@ -21,18 +21,20 @@
             {% with product=item.product %}
                 <tr>
                     <td>
-                        <a href="{{ product.get_absolute_url }}">
-                            <img src="
+                        <div style="width: 18rem;">
+                            <a href="{{ product.get_absolute_url }}">
+                                <img src="
                                 {% if product.image %}
                                     {{ product.image.url }}
                                 {% else %}
                                     {% static "img/no_image.png" %}
-                                {% endif %}">
-                        </a>
+                                {% endif %}" class="card-img-top">
+                            </a>
+                        </div>
                     </td>
                     <td>{{ product.name }}</td>
                     <td>{{ item.quantity }}</td>
-                    <td><a href="{% url "cart:cart_remove" product.id%}">Remove</a></td>
+                    <td><a href="{% url "cart:cart_remove" product.id %}">Remove</a></td>
                     <td class="num">${{ item.price }}</td>
                     <td class="num">${{ item.total_price }}</td>
                 </tr>
@@ -47,6 +49,10 @@
     </table>
     <p class="text-right">
         <a href="{% url "market:product_list" %}" class="button light">Continue shopping</a>
-        <a href="#" class="button">Checkout</a>
+        {% if cart%}
+        <a href="{% url "orders:order_create" %}" class="button">
+            Checkout
+        </a>
+    {% endif %}
     </p>
 {% endblock %}

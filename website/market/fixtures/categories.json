@@ -1,0 +1,10 @@
+[
+  {
+    "model": "market.category",
+    "pk": 3,
+    "fields": {
+      "name": "meat",
+      "slug": "meat"
+    }
+  }
+]

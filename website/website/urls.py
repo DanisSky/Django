@@ -20,8 +20,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('market/', include('market.urls', namespace='market')),
     path('cart/', include('cart.urls', namespace='cart')),
+    path('account/', include('account.urls', namespace='account')),
+    path('order/', include('order.urls', namespace='orders')),
+    path('', include('market.urls', namespace='market')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
