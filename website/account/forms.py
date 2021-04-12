@@ -4,23 +4,27 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 class UserSignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=50, required=True)
-    last_name = forms.CharField(max_length=50, required=True)
-    email = forms.EmailField(max_length=255, required=True)
+    email = forms.EmailField(max_length=255, help_text='Required. Inform a valid email address.')
 
     def __init__(self, *args, **kwargs):
-        super(UserSignUpForm, self).__init__(*args, **kwargs)
-
-        self.fields['username'].widget.attrs['class'] = 'input'
-        self.fields['email'].widget.attrs['class'] = 'input'
-        self.fields['password1'].widget.attrs['class'] = 'input'
-        self.fields['password2'].widget.attrs['class'] = 'input'
-        self.fields['first_name'].widget.attrs['class'] = 'input'
-        self.fields['last_name'].widget.attrs['class'] = 'input'
+        super(UserCreationForm, self).__init__(*args, **kwargs)
+        self.fields['username'].help_text = ''
+        self.fields['password1'].help_text = ''
+        self.fields['password2'].help_text = ''
+        self.fields['email'].help_text = ''
+        self.fields['first_name'].help_text = ''
+        self.fields['last_name'].help_text = ''
 
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
+
+    def clean_password(self):
+        cd = self.cleaned_data
+        if cd['password1'] != cd['password2']:
+            raise forms.ValidationError('''Passwords don\'t match.''')
+
+        return cd['password2']
 
 
 class UserSignInForm(AuthenticationForm):

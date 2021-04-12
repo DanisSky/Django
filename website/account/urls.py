@@ -1,10 +1,14 @@
-from django.conf.urls import url
+from django.urls import path
 
-from account import views
+from account.views import profile, signup
+from django.contrib.auth import views as auth_views
 
 app_name = 'account'
 
 urlpatterns = [
-    url('sign_up', views.sign_up, name='sign_up'),
-    url('sign_in', views.sign_in, name='sign_in'),
+    path('signup/', signup, name='signup'),
+    path('profile/', profile, name='profile'),
+    path('login/', auth_views.LoginView.as_view(template_name='account/registration/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='account/registration/logged_out.html'), name='logout'),
+
 ]

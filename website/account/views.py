@@ -1,10 +1,25 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+
+from account.forms import UserSignUpForm
 
 
-# Create your views here.
-def sign_up(request):
-    return render(request, 'account/sign_up.html')
+def signup(request):
+    if request.method == 'POST':
+        form = UserSignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()
+            user.is_active = False
+            user.save()
+
+            return redirect('market:product_list')
+    else:
+        form = UserSignUpForm()
+
+    return render(request, 'account/registration/register.html', {'form': form})
 
 
-def sign_in(request):
-    return render(request, 'account/sign_in.html')
+@login_required
+def profile(request):
+    return render(request, 'account/profile.html', {'section': 'profile'})
