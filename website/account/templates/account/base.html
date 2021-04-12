@@ -1,13 +1,29 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <title>{% block title %}Account{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <link href="{% static "css/base.css" %}" rel="stylesheet">
 </head>
 <body>
-
+<div id="header">
+    <span class="logo">MyShop</span>
+    {% if request.user.is_authenticated %}
+        <ul class="menu">
+            <li {% if section == "profile" %}class="selected"{% endif %}>
+                <a href="{% url "account:profile" %}">My profile</a>
+            </li>
+        </ul>
+    {% endif %}
+    <span class="user">
+        {% if request.user.is_authenticated %}
+            Hello {{ request.user.first_name }},
+            <a href="{% url "account:logout" %}">Logout</a>
+        {% else %}
+            <a href="{% url "account:login" %}">Log-in</a>
+        {% endif %}
+    </span>
+</div>
 <div id="content">
     {% block content %}
     {% endblock %}
