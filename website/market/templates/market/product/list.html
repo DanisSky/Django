@@ -22,6 +22,7 @@
         {% for product in products %}
             <div class="card" style="width: 18rem;">
                 <img src="
+
                         {% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
                      class="card-img-top">
                 <div class="card-body">

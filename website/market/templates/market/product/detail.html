@@ -17,22 +17,22 @@
             <input type="submit" value="Add to cart">
         </form>
     </div>
-     <h2 class="subtitle">Reviews</h2>
+    <h2 class="subtitle">Reviews</h2>
 
-        <div class="reviews-wrapper">
-            {% for review in product.reviews.all %}
-                <div class="notification space-below">
-                    <p>
-                        <strong>Date: </strong>{{ review.date_added|date:"Y-m-d" }},
-                        <strong>Stars: </strong>{{ review.stars }}
-                    </p>
+    <div class="reviews-wrapper">
+        {% for review in product.reviews.all %}
+            <div class="notification space-below">
+                <p>
+                    <strong>Date: </strong>{{ review.date_added|date:"Y-m-d" }},
+                    <strong>Stars: </strong>{{ review.stars }}
+                </p>
 
-                    {{ review.content }}
-                </div>
-            {% empty %}
-                <div class="notification space-below">
-                    No reviews yet...
-                </div>
-            {% endfor %}
-        </div>
+                {{ review.content }}
+            </div>
+        {% empty %}
+            <div class="notification space-below">
+                No reviews yet...
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

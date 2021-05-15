@@ -10,7 +10,6 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             user.refresh_from_db()
-            user.is_active = False
             user.save()
 
             return redirect('market:product_list')

@@ -1,7 +1,7 @@
+from django.contrib.auth import views as auth_views
 from django.urls import path
 
 from account.views import profile, signup
-from django.contrib.auth import views as auth_views
 
 app_name = 'account'
 
