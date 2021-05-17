@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-15 20:38+0300\n"
+"POT-Creation-Date: 2021-05-17 17:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,57 +18,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\cart\forms.py:8
+#: .\account\templates\account\registration\register.html:25
+msgid "First name"
+msgstr ""
+
+#: .\account\templates\account\registration\register.html:32
+msgid "Last name"
+msgstr ""
+
+#: .\account\templates\account\registration\register.html:39
+msgid "Email"
+msgstr ""
+
+#: .\account\templates\account\registration\register.html:46
+msgid "Password"
+msgstr ""
+
+#: .\account\templates\account\registration\register.html:53
+msgid "Password confirmation"
+msgstr ""
+
+#: .\account\templates\account\registration\register.html:60
+#: .\templates\parts\_navbar.html:45
+msgid "Sign up"
+msgstr ""
+
+#: .\cart\forms.py:8 .\cart\templates\cart\detail.html:14
 msgid "Quantity"
 msgstr ""
 
-#: .\market\templates\market\base.html:7 .\market\templates\market\base.html:28
-msgid "My shop"
+#: .\cart\templates\cart\detail.html:12
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:375
+msgid "Image"
 msgstr ""
 
-#: .\market\templates\market\base.html:35
-msgid "My profile"
+#: .\cart\templates\cart\detail.html:13
+msgid "Product"
 msgstr ""
 
-#: .\market\templates\market\base.html:36
-msgid "Logout"
+#: .\cart\templates\cart\detail.html:15
+msgid "Remove"
 msgstr ""
 
-#: .\market\templates\market\base.html:37
-msgid "Log-in"
+#: .\cart\templates\cart\detail.html:16
+msgid "Unit price"
 msgstr ""
 
-#: .\market\templates\market\base.html:43
-msgid "Language"
+#: .\cart\templates\cart\detail.html:17
+msgid "Price"
 msgstr ""
 
-#: .\market\templates\market\base.html:65
-#, python-format
-msgid ""
-"\n"
-"                    %(total_items)s item%(total_items_plural)s,\n"
-"                    $%(total_price)s\n"
-"                "
+#: .\cart\templates\cart\detail.html:72
+msgid "Apply"
 msgstr ""
 
-#: .\market\templates\market\base.html:71
-msgid "Your cart is empty."
+#: .\cart\templates\cart\detail.html:76
+msgid "Continue shopping"
 msgstr ""
 
-#: .\market\templates\market\base.html:123
-msgid "Send Message"
-msgstr ""
-
-#: .\market\templates\market\base.html:135
-msgid "Russia"
-msgstr ""
-
-#: .\market\templates\market\base.html:136
-msgid "Kazan"
+#: .\cart\templates\cart\detail.html:79
+msgid "Checkout"
 msgstr ""
 
 #: .\market\templates\market\product\detail.html:5
-#: .\market\templates\market\product\list.html:23
+#: .\market\templates\market\product\list.html:35
 msgid "Products"
 msgstr ""
 
@@ -80,16 +93,69 @@ msgstr ""
 msgid "Reviews"
 msgstr ""
 
-#: .\market\templates\market\product\detail.html:35
-msgid "No reviews yet..."
-msgstr ""
-
-#: .\market\templates\market\product\list.html:10
+#: .\market\templates\market\product\list.html:14
 msgid "Categories"
 msgstr ""
 
-#: .\market\templates\market\product\list.html:13
+#: .\market\templates\market\product\list.html:19
 msgid "All"
+msgstr ""
+
+#: .\market\templates\market\product\list.html:59
+msgid "View"
+msgstr ""
+
+#: .\templates\parts\_footer.html:5
+msgid "My Shop"
+msgstr ""
+
+#: .\templates\parts\_footer.html:8
+msgid "About Us"
+msgstr ""
+
+#: .\templates\parts\_footer.html:17
+msgid "Important"
+msgstr ""
+
+#: .\templates\parts\_header.html:6 .\templates\parts\_navbar.html:5
+msgid "My shop"
+msgstr ""
+
+#: .\templates\parts\_navbar.html:12
+msgid "Welcome"
+msgstr ""
+
+#: .\templates\parts\_navbar.html:15
+msgid "My profile"
+msgstr ""
+
+#: .\templates\parts\_navbar.html:25
+msgid "Your cart:"
+msgstr ""
+
+#: .\templates\parts\_navbar.html:27
+#, python-format
+msgid ""
+"\n"
+"                            %(total_items)s items%(total_items_plural)s,\n"
+"                            $%(total_price)s\n"
+"                        "
+msgstr ""
+
+#: .\templates\parts\_navbar.html:33
+msgid "Your cart is empty."
+msgstr ""
+
+#: .\templates\parts\_navbar.html:41
+msgid "Logout"
+msgstr ""
+
+#: .\templates\parts\_navbar.html:49
+msgid "Log-in"
+msgstr ""
+
+#: .\templates\parts\_navbar.html:59
+msgid "Language"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
@@ -482,10 +548,6 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:226
 msgid "File"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\files.py:375
-msgid "Image"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\json.py:18

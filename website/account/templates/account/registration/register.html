@@ -1,25 +1,70 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
+{% load i18n %}
 {% block title %}Register{% endblock %}
 {% block content %}
-    <div class="login">
-        <h1>Register</h1>
-        {% if form.errors %}
-            <p>
-                Your username and password didn't match.
-                Please try again.
-            </p>
-        {% else %}
-            <p>Please, use the following form to register:</p>
-        {% endif %}
-        <div class="login-form">
-            <form action="{% url 'account:signup' %}" method="post">
-                <div class="form__inputs">
-                    {{ form }}
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <h1>Register</h1>
+                {% if form.errors %}
+                    <p>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                {{ field.label }}: {{ error|escape }}<br>
+                            {% endfor %}
+                        {% endfor %}
+                        Please try again.
+                    </p>
+                {% else %}
+                    <p>Please, use the following form to register:</p>
+                {% endif %}
+                <div class="columns is-centered">
+                    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                        <form action="{% url 'account:signup' %}" method="post" class="box">
+                            <div class="field">
+                                <label for="" class="label">{% trans "First name" %}</label>
+                                <div class="control has-icons-left">
+                                    {{ form.first_name }}
+                                    <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="label">{% trans "Last name" %}</label>
+                                <div class="control has-icons-left">
+                                    {{ form.last_name }}
+                                    <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="label">{% trans "Email" %}:</label>
+                                <div class="control has-icons-left">
+                                    {{ form.email }}
+                                    <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="label">{% trans "Password" %}:</label>
+                                <div class="control has-icons-left">
+                                    {{ form.password1 }}
+                                    <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="label">{% trans "Password confirmation" %}:</label>
+                                <div class="control has-icons-left">
+                                    {{ form.password2 }}
+                                    <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <button class="button is-success">{% trans "Sign up" %}</button>
+                            </div>
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ next }}"/>
+                        </form>
+                    </div>
                 </div>
-                {% csrf_token %}
-                <input type="hidden" name="next" value="{{ next }}"/>
-                <p><input type="submit" value="Register"></p>
-            </form>
+            </div>
         </div>
-    </div>
+    </section>
 {% endblock %}

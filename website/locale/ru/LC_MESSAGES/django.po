@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-15 20:38+0300\n"
-"PO-Revision-Date: 2021-05-15 20:38+0000\n"
+"POT-Creation-Date: 2021-05-17 17:54+0300\n"
+"PO-Revision-Date: 2021-05-17 18:28+0000\n"
 "Last-Translator: b'  <danis@danis.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,70 +19,72 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.6\n"
 
-#: .\cart\forms.py:8
+#: .\account\templates\account\registration\register.html:25
+msgid "First name"
+msgstr "Имя"
+
+#: .\account\templates\account\registration\register.html:32
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\account\templates\account\registration\register.html:39
+msgid "Email"
+msgstr "Почта"
+
+#: .\account\templates\account\registration\register.html:46
+msgid "Password"
+msgstr "Пароль"
+
+#: .\account\templates\account\registration\register.html:53
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+#: .\account\templates\account\registration\register.html:60
+#: .\templates\parts\_navbar.html:45
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: .\cart\forms.py:8 .\cart\templates\cart\detail.html:14
 msgid "Quantity"
 msgstr "Количество"
 
-#: .\market\templates\market\base.html:7
-#: .\market\templates\market\base.html:28
-msgid "My shop"
-msgstr "Мой магазин"
+#: .\cart\templates\cart\detail.html:12
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:375
+msgid "Image"
+msgstr "Изображение"
 
-#: .\market\templates\market\base.html:35
-msgid "My profile"
-msgstr "Профиль"
-
-#: .\market\templates\market\base.html:36
-msgid "Logout"
-msgstr "Выйти"
-
-#: .\market\templates\market\base.html:37
-msgid "Log-in"
-msgstr "Войти"
-
-#: .\market\templates\market\base.html:43
-msgid "Language"
-msgstr "Язык"
-
-#: .\market\templates\market\base.html:65
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                        %(total_items)s item%(total_items_plural)s,\n"
-#| "                        $%(total_price)s\n"
-#| "                    "
-msgid ""
-"\n"
-"                    %(total_items)s item%(total_items_plural)s,\n"
-"                    $%(total_price)s\n"
-"                "
-msgstr ""
-"\n"
-"%(total_items)s вещей%(total_items_plural)s,\n"
-"$%(total_price)s"
-
-#: .\market\templates\market\base.html:71
-msgid "Your cart is empty."
-msgstr "Ваша корзина пуста"
-
-#: .\market\templates\market\base.html:123
+#: .\cart\templates\cart\detail.html:13
 #, fuzzy
-#| msgid "Messages"
-msgid "Send Message"
-msgstr "Сообщения"
+#| msgid "Products"
+msgid "Product"
+msgstr "Продукты"
 
-#: .\market\templates\market\base.html:135
-#, fuzzy
-#| msgid "Russian"
-msgid "Russia"
-msgstr "Русский"
+#: .\cart\templates\cart\detail.html:15
+msgid "Remove"
+msgstr "Убрать"
 
-#: .\market\templates\market\base.html:136
-msgid "Kazan"
-msgstr "Казань"
+#: .\cart\templates\cart\detail.html:16
+msgid "Unit price"
+msgstr "Цена за единицу"
+
+#: .\cart\templates\cart\detail.html:17
+msgid "Price"
+msgstr "Цена"
+
+#: .\cart\templates\cart\detail.html:72
+msgid "Apply"
+msgstr "Подтвердить"
+
+#: .\cart\templates\cart\detail.html:76
+msgid "Continue shopping"
+msgstr "Продолжить покупки"
+
+#: .\cart\templates\cart\detail.html:79
+msgid "Checkout"
+msgstr "Оформить"
 
 #: .\market\templates\market\product\detail.html:5
-#: .\market\templates\market\product\list.html:23
+#: .\market\templates\market\product\list.html:35
 msgid "Products"
 msgstr "Продукты"
 
@@ -94,17 +96,80 @@ msgstr "Добавить в корзину"
 msgid "Reviews"
 msgstr "Отзывы"
 
-#: .\market\templates\market\product\detail.html:35
-msgid "No reviews yet..."
-msgstr "Отзывов еще нет..."
-
-#: .\market\templates\market\product\list.html:10
+#: .\market\templates\market\product\list.html:14
 msgid "Categories"
 msgstr "Категории"
 
-#: .\market\templates\market\product\list.html:13
+#: .\market\templates\market\product\list.html:19
 msgid "All"
 msgstr "Все"
+
+#: .\market\templates\market\product\list.html:59
+msgid "View"
+msgstr "Посмотреть"
+
+#: .\templates\parts\_footer.html:5
+msgid "My Shop"
+msgstr "Магазин"
+
+#: .\templates\parts\_footer.html:8
+#, fuzzy
+#| msgid "About"
+msgid "About Us"
+msgstr "Про нас"
+
+#: .\templates\parts\_footer.html:17
+msgid "Important"
+msgstr "Важно"
+
+#: .\templates\parts\_header.html:6 .\templates\parts\_navbar.html:5
+msgid "My shop"
+msgstr "Мой магазин"
+
+#: .\templates\parts\_navbar.html:12
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .\templates\parts\_navbar.html:15
+msgid "My profile"
+msgstr "Профиль"
+
+#: .\templates\parts\_navbar.html:25
+msgid "Your cart:"
+msgstr "Ваша корзина:"
+
+#: .\templates\parts\_navbar.html:27
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                        %(total_items)s item%(total_items_plural)s,\n"
+#| "                        $%(total_price)s\n"
+#| "                    "
+msgid ""
+"\n"
+"                            %(total_items)s items%(total_items_plural)s,\n"
+"                            $%(total_price)s\n"
+"                        "
+msgstr ""
+"\n"
+"%(total_items)s вещей%(total_items_plural)s,\n"
+"$%(total_price)s"
+
+#: .\templates\parts\_navbar.html:33
+msgid "Your cart is empty."
+msgstr "Ваша корзина пуста"
+
+#: .\templates\parts\_navbar.html:41
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\templates\parts\_navbar.html:49
+msgid "Log-in"
+msgstr "Войти"
+
+#: .\templates\parts\_navbar.html:59
+msgid "Language"
+msgstr "Язык"
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
 msgid "Messages"
@@ -496,10 +561,6 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:226
 msgid "File"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\files.py:375
-msgid "Image"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\json.py:18
@@ -1120,22 +1181,22 @@ msgstr[1] ""
 #, python-format
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "день"
+msgstr[1] "дней"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:13
 #, python-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "час"
+msgstr[1] "часов"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:14
 #, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "минута"
+msgstr[1] "минут"
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:110
 msgid "Forbidden"
@@ -1327,8 +1388,19 @@ msgstr "Английский"
 msgid "Russian"
 msgstr "Русский"
 
+#, fuzzy
+#~ msgid "Send Message"
+#~ msgstr "Сообщения"
+
+#, fuzzy
+#~ msgid "Russia"
+#~ msgstr "Русский"
+
+#~ msgid "Kazan"
+#~ msgstr "Казань"
+
+#~ msgid "No reviews yet..."
+#~ msgstr "Отзывов еще нет..."
+
 #~ msgid "Contact"
 #~ msgstr "Контакты"
-
-#~ msgid "About"
-#~ msgstr "Про нас"

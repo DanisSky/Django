@@ -1,4 +1,4 @@
-{% extends "market/base.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 {% load static %}
 {% block title %}
@@ -37,7 +37,7 @@
                         <div class="column is-3">
                             <div class="card">
                                 <div class="card-image">
-                                    <figure class="image">
+                                    <figure class="image is-3by2">
                                         <img src="{% if p.image %}
                                     {{ p.image.url }}
                                     {% else %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% load static %}
+{% include "parts/_header.html" %}
+<body>
+
+{% include "parts/_navbar.html" %}
+
+
+<main>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</main>
+
+{% include "parts/_footer.html" %}
+
+</body>
+</html>

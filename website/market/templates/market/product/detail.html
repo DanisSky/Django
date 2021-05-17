@@ -1,45 +1,36 @@
-{% extends "market/base.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 {% load static %}
 {% block title %}
     {% if category %}{{ category.title }}{% else %}{% trans "Products" %}{% endif %}
 {% endblock %}
 {% block content %}
-    <div class="product-detail" style="width: 18rem;">
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
-             class="card-img-top">
-        <h1>{{ product.name }}</h1>
-        <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
-        <p class="price">${{ product.price }}</p>
-        {{ product.description|linebreaks }}
-        <form action="{% url "cart:cart_add" product.id %}" method="post">
-            {{ cart_product_form }}
-            {% csrf_token %}
-            <input type="submit" value="{% trans "Add to cart" %}">
-        </form>
+
+    <div class="content container">
+        <div class="product__detail">
+            <div class="product__detail__card">
+                <div class="product__detail__card__image">
+                    <img src="
+
+                            {% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
+                         class="card-img-top">
+                </div>
+                <div class="product__detail__card__about">
+                    <h1>{{ product.name }}</h1>
+                    <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+                    <p class="price">${{ product.price }}</p>
+                    {{ product.description|linebreaks }}
+                    <form action="{% url "cart:cart_add" product.id %}" method="post">
+                        {{ cart_product_form }}
+                        {% csrf_token %}
+                        <input type="submit" value="{% trans "Add to cart" %}">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+
     <h2 class="subtitle">{% trans "Reviews" %}</h2>
-
-{#    <div class="reviews-wrapper">#}
-{#        {% for review in product.reviews.all %}#}
-{#            <div class="notification space-below">#}
-{#                <p>#}
-{#                    <strong>Date: </strong>{{ review.date_added|date:"Y-m-d" }},#}
-{#                    <strong>Stars: </strong>{{ review.stars }}#}
-{#                </p>#}
-{##}
-{#                {{ review.content }}#}
-{#            </div>#}
-{#        {% empty %}#}
-{#            <div class="notification space-below">#}
-{#                {% trans "No reviews yet..." %}#}
-{#            </div>#}
-{#        {% endfor %}#}
-{#    </div>#}
-{##}
-{##}
-{#    <h2 class="subtitle">Reviews</h2>#}
-
     <div class="reviews-wrapper">
         {% for review in product.reviews.all %}
             <div class="notification space-below">
@@ -101,4 +92,6 @@
         {% endif %}
     </div>
     </div>
+
+
 {% endblock %}

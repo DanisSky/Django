@@ -1,19 +1,20 @@
-{% extends "market/base.html" %}
+{% extends "base.html" %}
+{% load i18n %}
 {% load static %}
 {% block title %}
     Your shopping cart
 {% endblock %}
 {% block content %}
     <h1>Your shopping cart</h1>
-    <table class="cart">
+    <table class="table">
         <thead>
         <tr>
-            <th>Image</th>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Remove</th>
-            <th>Unit price</th>
-            <th>Price</th>
+            <th>{% trans "Image" %}</th>
+            <th>{% trans "Product" %}</th>
+            <th>{% trans "Quantity" %}</th>
+            <th>{% trans "Remove" %}</th>
+            <th>{% trans "Unit price" %}</th>
+            <th>{% trans "Price" %}</th>
         </tr>
         </thead>
         <tbody>
@@ -21,7 +22,7 @@
             {% with product=item.product %}
                 <tr>
                     <td>
-                        <div style="width: 18rem;">
+                        <figure class="image is-128x128">
                             <a href="{{ product.get_absolute_url }}">
                                 <img src="
                                 {% if product.image %}
@@ -30,7 +31,7 @@
                                     {% static "img/no_image.png" %}
                                 {% endif %}" class="card-img-top">
                             </a>
-                        </div>
+                        </figure>
                     </td>
                     <td>{{ product.name }}</td>
                     <td>{{ item.quantity }}</td>
@@ -68,14 +69,14 @@
     </table>
     <form action="{% url "coupons:apply" %}" method="post">
         {{ coupon_apply_form }}
-        <input type="submit" value="Apply">
+        <input type="submit" class="button is-success" value="{% trans "Apply" %}">
         {% csrf_token %}
     </form>
     <p class="text-right">
-        <a href="{% url "market:product_list" %}" class="button light">Continue shopping</a>
+        <a href="{% url "market:product_list" %}" class="button light">{% trans "Continue shopping" %}</a>
         {% if cart %}
             <a href="{% url "orders:order_create" %}" class="button">
-                Checkout
+                {% trans "Checkout" %}
             </a>
         {% endif %}
     </p>

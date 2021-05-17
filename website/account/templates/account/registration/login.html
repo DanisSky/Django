@@ -1,4 +1,4 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 {% block title %}Log-in{% endblock %}
 {% block content %}
     <h1>Log-in</h1>
@@ -10,14 +10,41 @@
     {% else %}
         <p>Please, use the following form to log-in:</p>
     {% endif %}
-    <div class="login">
-        <form action="{% url 'account:login' %}" method="post">
-            <div class="form__inputs">
-                {{ form }}
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                        <form action="{% url 'account:login' %}" method="post" class="box">
+                            <div class="field">
+                                <label for="" class="label">Email</label>
+                                <div class="control has-icons-left">
+                                    {{ form.username }}
+                                    <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="label">Password</label>
+                                <div class="control has-icons-left">
+                                    {{ form.password }}
+                                    <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="checkbox">
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                            <div class="field">
+                                <button class="button is-success">Login</button>
+                            </div>
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ next }}"/>
+                        </form>
+                    </div>
+                </div>
             </div>
-            {% csrf_token %}
-            <input type="hidden" name="next" value="{{ next }}"/>
-            <p><input type="submit" value="Log-in"></p>
-        </form>
-    </div>
+        </div>
+    </section>
+
 {% endblock %}
