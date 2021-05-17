@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
+from account.models import Account
 from cart.forms import CartAddProductForm
-from .models import Category, Product
+from .models import Category, Product, ProductReview
 
 
 def product_list(request, category_slug=None):
@@ -25,6 +26,16 @@ def product_detail(request, id_, slug):
                                 slug=slug,
                                 available=True)
     cart_product_form = CartAddProductForm()
+
+    if request.method == 'POST' and request.user.is_authenticated:
+        stars = request.POST.get('stars', 3)
+        text = request.POST.get('content', '')
+        account = get_object_or_404(Account, user_id=request.user.pk)
+        ProductReview.objects.create(product=product, user=account,
+                                     stars=stars, text=text)
+
+        return redirect('market:product_detail', id_=id_, slug=slug)
+
     context = {'product': product,
                'cart_product_form': cart_product_form}
 

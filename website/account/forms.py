@@ -9,6 +9,7 @@ class UserSignUpForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(UserSignUpForm, self).__init__(*args, **kwargs)
         self.fields['username'].help_text = ''
+        self.fields['username'].required = False
         self.fields['password1'].help_text = ''
         self.fields['password2'].help_text = ''
         self.fields['email'].help_text = ''
@@ -23,9 +24,9 @@ class UserSignUpForm(UserCreationForm):
         model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'login__input', 'placeholder': 'User name'}),
             'first_name': forms.TextInput(attrs={'class': 'login__input', 'placeholder': 'First name'}),
             'last_name': forms.TextInput(attrs={'class': 'login__input', 'placeholder': 'Last name'}),
+            'username': forms.HiddenInput(attrs={'help_text': '', }),
         }
 
     def clean_password(self):
@@ -39,9 +40,8 @@ class UserSignUpForm(UserCreationForm):
 class UserSignInForm(AuthenticationForm):
     class Meta:
         model = User
-        fields = ['username', 'email', 'password']
+        fields = ['email', 'password']
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'login__input'}),
             'email': forms.EmailInput(attrs={'class': 'login__input'}),
             'password': forms.PasswordInput(attrs={'class': 'login__input'}),
         }

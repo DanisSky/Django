@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'order',
     'account',
     'coupons',
+    'rosetta',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 LOGIN_REDIRECT_URL = reverse_lazy('account:profile')
 LOGIN_URL = reverse_lazy('account:login')
 LOGOUT_URL = reverse_lazy('account:logout')
+
+# Redis
+REDIS_HOST = 'localhost'
+REDIS_PORT = '6379'
+BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
+CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+
+# Email
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'dyingpopcorn@gmail.com'
+EMAIL_HOST_PASSWORD = 'Qwert007'
+EMAIL_PORT = 587
+CELERY_TASK_ALWAYS_EAGER = True
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

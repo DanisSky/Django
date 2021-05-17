@@ -9,6 +9,8 @@ python = "^3.8"
 Pillow = "^8.1.0"
 psycopg2 = "^2.8.6"
 celery = "^5.0.5"
+django-rosetta = "^0.9.6"
+redis = "^3.5.3"
 
 [tool.poetry.dev-dependencies]
 
