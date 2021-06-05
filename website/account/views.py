@@ -1,10 +1,12 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordResetForm
 from django.db import IntegrityError
 from django.http import Http404
 from django.shortcuts import render, redirect
 
 from account.forms import UserSignUpForm
 from account.models import Account
+from account.task import send_password_reset_email
 
 
 def signup(request):
@@ -36,6 +38,20 @@ def verify(request, code):
     user.save()
 
     return redirect('account:profile')
+
+
+def password_reset_request(request):
+    if request.method == "POST":
+        password_reset_form = PasswordResetForm(request.POST)
+        if password_reset_form.is_valid():
+            user_email = password_reset_form.cleaned_data['email']
+            send_password_reset_email(user_email)
+
+            return redirect("account:password_reset_done")
+
+    password_reset_form = PasswordResetForm()
+    return render(request=request, template_name="account/registration/password_reset.html",
+                  context={"password_reset_form": password_reset_form})
 
 
 @login_required

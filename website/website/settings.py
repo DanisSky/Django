@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'account',
     'coupons',
     'rosetta',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -161,3 +162,5 @@ EMAIL_PORT = 587
 CELERY_TASK_ALWAYS_EAGER = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

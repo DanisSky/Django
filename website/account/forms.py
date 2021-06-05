@@ -50,3 +50,4 @@ class UserSignInForm(AuthenticationForm):
     class Meta:
         model = User
         fields = ['username', 'password']
+

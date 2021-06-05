@@ -37,7 +37,6 @@ a:hover, ul:hover, li:hover {
 
 nav a {
   color: black;
-
 }
 nav a:after {
   bottom: -3px;

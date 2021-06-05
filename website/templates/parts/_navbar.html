@@ -1,0 +1,72 @@
+{% load i18n %}
+<nav id="header" class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand is-success">
+        <a class="navbar-item" href="/">
+            {% trans "My shop" %}
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <div class="navbar-item">
+                <span>{% trans "Welcome" %}&#160</span>
+                {% if request.user.is_authenticated %}
+                    <b>{{ user.username }}</b>
+                    <a class="navbar-item" href="{% url "account:profile" %}">{% trans "My profile" %}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-end">
+        <div id="subheader" class="navbar-item">
+            {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                    {% trans "Your cart:" %}&#160
+                    <a href="{% url "cart:cart_detail" %}" class="is-black">
+                        {% blocktrans with total_items_plural=total_items|pluralize total_price=cart.get_total_price %}
+                            {{ total_items }} items{{ total_items_plural }},
+                            ${{ total_price }}
+                        {% endblocktrans %}
+                    </a>
+                {% else %}
+                    {% trans "Your cart is empty." %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="navbar-item">
+            <div class="buttons">
+                {% if request.user.is_authenticated %}
+                    <a class="button is-primary" href="{% url "account:logout" %}">
+                        {% trans "Logout" %}
+                    </a>
+                {% else %}
+                    <a class="button is-primary" href="{% url "account:signup" %}">
+                        <strong>{% trans "Sign up" %}</strong>
+                    </a>
+
+                    <a class=" button is-light" href="{% url "account:login" %}">
+                        {% trans "Log-in" %}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            <a class="navbar-link">
+                {% trans "Language" %}:
+            </a>
+            <div class="navbar-dropdown is-right">
+                {% for language in languages %}
+                    <a class="navbar-item" href="/{{ language.code }}/"
+                            {% if language.code == LANGUAGE_CODE %}
+                            {% endif %}>
+                        {{ language.name_local }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</nav>
