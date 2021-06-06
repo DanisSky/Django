@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
 
-def custom_404(request, message=None, *args, **kwargs):
+def custom_404(request, *args, **kwargs):
     print(args)
     print(kwargs)
-    return render(request, 'errors/404_page.html', {'message': kwargs['exception']}, status=404)
+    return render(request, 'errors/404_page.html', status=404)
 
 
 def custom_500(request, *args, **kwargs):
