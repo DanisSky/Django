@@ -1,10 +1,11 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordResetForm
+from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.http import Http404
 from django.shortcuts import render, redirect
 
-from account.forms import UserSignUpForm
+from account.forms import UserSignUpForm, PhotoUploadForm
 from account.models import Account
 from account.task import send_password_reset_email
 
@@ -56,4 +57,11 @@ def password_reset_request(request):
 
 @login_required
 def profile(request):
-    return render(request, 'account/profile.html', {'section': 'profile'})
+    user = User.objects.get(email=request.user.email)
+    form = PhotoUploadForm(request.POST or None, request.FILES or None, instance=user.account)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+
+    return render(request=request, template_name='account/profile.html', context={'profile': user.account, 'form': form})

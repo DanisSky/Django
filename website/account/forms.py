@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
+from account.models import Account
+
 
 class UserSignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=255, help_text='Required. Inform a valid email address.')
@@ -51,3 +53,9 @@ class UserSignInForm(AuthenticationForm):
         model = User
         fields = ['username', 'password']
 
+
+class PhotoUploadForm(forms.ModelForm):
+    class Meta:
+        model = Account
+        fields = ['photo']
+        exclude = ['user', 'is_verified', 'verification_uuid']

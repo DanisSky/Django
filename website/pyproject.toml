@@ -12,6 +12,9 @@ celery = "^5.0.5"
 django-rosetta = "^0.9.6"
 redis = "^3.5.3"
 django-crispy-forms = "^1.11.2"
+unicodecsv = "^0.14.1"
+beautifultable = "^1.0.1"
+django-parler = "^2.2"
 
 [tool.poetry.dev-dependencies]
 

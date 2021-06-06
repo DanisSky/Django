@@ -1,6 +1,6 @@
-import csv
 import datetime
 
+import unicodecsv as csv
 from django.contrib import admin
 from django.http import HttpResponse
 
@@ -17,7 +17,7 @@ def export_to_csv(self, request, queryset):
     meta = self.model._meta
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename={}.csv'.format(meta.verbose_name)
-    writer = csv.writer(response)
+    writer = csv.writer(response, encoding='utf-8')
     fields = [field for field in meta.get_fields() if not field.many_to_many and not field.one_to_many]
 
     writer.writerow([field.verbose_name for field in fields])

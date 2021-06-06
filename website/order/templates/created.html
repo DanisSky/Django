@@ -1,9 +1,21 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block title %}Thank you{% endblock %}
 
 {% block content %}
-    <h1>Thank you</h1>
-    <p>Your order has been successfully completed. Your order number is
-        <strong>{{ order.id }}</strong>.</p>
+    <div class="box">
+        <div class="tile is-parent is-vertical">
+            <article class="tile is-child notification is-primary">
+                <h1>{% trans "Thank you" %}</h1>
+                <br>
+                <p>{% trans "Your order has been successfully completed. Your order number is" %}
+                    <strong>{{ order.id }}</strong>.</p>
+            </article>
+
+        </div>
+        <div style="height: 300px">
+            <p></p>
+        </div>
+    </div>
 {% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-17 17:54+0300\n"
+"POT-Creation-Date: 2021-06-05 19:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,33 +18,151 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\account\templates\account\registration\register.html:25
-msgid "First name"
+#: .\account\models.py:15
+msgid "verified"
 msgstr ""
 
-#: .\account\templates\account\registration\register.html:32
-msgid "Last name"
+#: .\account\models.py:16
+msgid "Unique Verification UUID"
 msgstr ""
 
-#: .\account\templates\account\registration\register.html:39
+#: .\account\models.py:35
+msgid "User"
+msgstr ""
+
+#: .\account\models.py:36
+msgid "Users"
+msgstr ""
+
+#: .\account\templates\account\profile.html:4
+#: .\account\templates\account\profile.html:7
+msgid "Profile"
+msgstr ""
+
+#: .\account\templates\account\profile.html:8
+msgid "Welcome to your profile."
+msgstr ""
+
+#: .\account\templates\account\registration\logged_out.html:6
+msgid "Logged out"
+msgstr ""
+
+#: .\account\templates\account\registration\logged_out.html:7
+msgid "You have been successfully logged out. You can "
+msgstr ""
+
+#: .\account\templates\account\registration\logged_out.html:7
+msgid "login"
+msgstr ""
+
+#: .\account\templates\account\registration\logged_out.html:7
+msgid "again."
+msgstr ""
+
+#: .\account\templates\account\registration\login.html:7
+msgid "Your username and password didn't match."
+msgstr ""
+
+#: .\account\templates\account\registration\login.html:8
+#: .\account\templates\account\registration\register.html:15
+msgid "Please try again."
+msgstr ""
+
+#: .\account\templates\account\registration\login.html:20
+#: .\account\templates\account\registration\register.html:37
 msgid "Email"
 msgstr ""
 
-#: .\account\templates\account\registration\register.html:46
+#: .\account\templates\account\registration\login.html:27
+#: .\account\templates\account\registration\register.html:44
 msgid "Password"
 msgstr ""
 
-#: .\account\templates\account\registration\register.html:53
+#: .\account\templates\account\registration\login.html:35
+msgid "Remember me"
+msgstr ""
+
+#: .\account\templates\account\registration\login.html:39
+msgid "Login"
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset.html:12
+msgid "Reset Password"
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset.html:14
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset.html:18
+msgid "Send email"
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset_complete.html:8
+msgid "Password reset complete"
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset_complete.html:10
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset_complete.html:11
+msgid "Log in"
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset_confirm.html:11
+msgid "Password Reset Confirm"
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset_confirm.html:13
+msgid "Please enter your new password."
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset_confirm.html:17
+msgid "Reset password"
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset_done.html:9
+msgid "Password reset sent"
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset_done.html:11
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+
+#: .\account\templates\account\registration\password_reset_done.html:11
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+
+#: .\account\templates\account\registration\register.html:23
+msgid "First name"
+msgstr ""
+
+#: .\account\templates\account\registration\register.html:30
+msgid "Last name"
+msgstr ""
+
+#: .\account\templates\account\registration\register.html:51
 msgid "Password confirmation"
 msgstr ""
 
-#: .\account\templates\account\registration\register.html:60
+#: .\account\templates\account\registration\register.html:58
 #: .\templates\parts\_navbar.html:45
 msgid "Sign up"
 msgstr ""
 
 #: .\cart\forms.py:8 .\cart\templates\cart\detail.html:14
 msgid "Quantity"
+msgstr ""
+
+#: .\cart\templates\cart\detail.html:5
+msgid "Your shopping cart"
 msgstr ""
 
 #: .\cart\templates\cart\detail.html:12
@@ -56,7 +174,7 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:15
+#: .\cart\templates\cart\detail.html:15 .\cart\templates\cart\detail.html:38
 msgid "Remove"
 msgstr ""
 
@@ -68,33 +186,61 @@ msgstr ""
 msgid "Price"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:72
+#: .\cart\templates\cart\detail.html:76
 msgid "Apply"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:76
+#: .\cart\templates\cart\detail.html:88
 msgid "Continue shopping"
 msgstr ""
 
-#: .\cart\templates\cart\detail.html:79
+#: .\cart\templates\cart\detail.html:91
 msgid "Checkout"
 msgstr ""
 
+#: .\market\models.py:15
+msgid "Category"
+msgstr ""
+
+#: .\market\models.py:16 .\market\templates\market\product\list.html:14
+msgid "Categories"
+msgstr ""
+
+#: .\market\models.py:31
+msgid "description"
+msgstr ""
+
+#: .\market\models.py:32
+msgid "price"
+msgstr ""
+
+#: .\market\models.py:33
+msgid "stock"
+msgstr ""
+
+#: .\market\models.py:34
+msgid "available"
+msgstr ""
+
 #: .\market\templates\market\product\detail.html:5
-#: .\market\templates\market\product\list.html:35
+#: .\market\templates\market\product\list.html:34
 msgid "Products"
 msgstr ""
 
-#: .\market\templates\market\product\detail.html:18
+#: .\market\templates\market\product\detail.html:24
 msgid "Add to cart"
 msgstr ""
 
-#: .\market\templates\market\product\detail.html:21
+#: .\market\templates\market\product\detail.html:31
 msgid "Reviews"
 msgstr ""
 
-#: .\market\templates\market\product\list.html:14
-msgid "Categories"
+#: .\market\templates\market\product\detail.html:84
+msgid "Submit"
+msgstr ""
+
+#: .\market\templates\market\product\detail.html:89
+msgid "Please sign in to add review!"
 msgstr ""
 
 #: .\market\templates\market\product\list.html:19
@@ -105,16 +251,20 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: .\templates\parts\_footer.html:5
-msgid "My Shop"
-msgstr ""
-
-#: .\templates\parts\_footer.html:8
+#: .\templates\parts\_footer.html:7
 msgid "About Us"
 msgstr ""
 
-#: .\templates\parts\_footer.html:17
-msgid "Important"
+#: .\templates\parts\_footer.html:8
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+"quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
+"consequat."
+msgstr ""
+
+#: .\templates\parts\_footer.html:12
+msgid "Contact us"
 msgstr ""
 
 #: .\templates\parts\_header.html:6 .\templates\parts\_navbar.html:5
@@ -158,6 +308,25 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
+#: .\venv\Lib\site-packages\crispy_forms\tests\test_form_helper.py:129
+#: .\venv\Lib\site-packages\crispy_forms\tests\test_form_helper.py:139
+#: .\venv\Lib\site-packages\django\forms\fields.py:54
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\crispy_forms\tests\test_layout.py:391
+msgid "i18n text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\crispy_forms\tests\test_layout.py:393
+msgid "i18n legend"
+msgstr ""
+
+#: .\venv\Lib\site-packages\crispy_forms\tests\test_layout_objects.py:134
+#: .\venv\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
 msgid "Messages"
 msgstr ""
@@ -190,10 +359,6 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:58
 msgid "That page contains no results"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:22
-msgid "Enter a valid value."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:93
@@ -589,10 +754,6 @@ msgstr ""
 #. characters will prevent the default label_suffix to be appended to the label
 #: .\venv\Lib\site-packages\django\forms\boundfield.py:150
 msgid ":?.!"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\fields.py:54
-msgid "This field is required."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:247
@@ -1360,10 +1521,10 @@ msgstr ""
 msgid "Unable to connect to qpid with SASL mechanism %s"
 msgstr ""
 
-#: .\website\settings.py:119
+#: .\website\settings.py:120
 msgid "English"
 msgstr ""
 
-#: .\website\settings.py:120
+#: .\website\settings.py:121
 msgid "Russian"
 msgstr ""

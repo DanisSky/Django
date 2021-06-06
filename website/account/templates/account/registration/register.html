@@ -5,7 +5,6 @@
     <section class="hero is-primary is-fullheight">
         <div class="hero-body">
             <div class="container">
-                <h1>Register</h1>
                 {% if form.errors %}
                     <p>
                         {% for field in form %}
@@ -13,10 +12,9 @@
                                 {{ field.label }}: {{ error|escape }}<br>
                             {% endfor %}
                         {% endfor %}
-                        Please try again.
+                       {% trans "Please try again." %}
                     </p>
                 {% else %}
-                    <p>Please, use the following form to register:</p>
                 {% endif %}
                 <div class="columns is-centered">
                     <div class="column is-5-tablet is-4-desktop is-3-widescreen">
@@ -57,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="field">
-                                <button class="button is-success">{% trans "Sign up" %}</button>
+                                <button class="button has-background-info-dark has-text-white">{% trans "Sign up" %}</button>
                             </div>
                             {% csrf_token %}
                             <input type="hidden" name="next" value="{{ next }}"/>

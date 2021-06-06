@@ -2,10 +2,10 @@
 {% load i18n %}
 {% load static %}
 {% block title %}
-    Your shopping cart
+    {% trans "Your shopping cart" %}
 {% endblock %}
 {% block content %}
-    <h1>Your shopping cart</h1>
+    <br>
     <table class="table">
         <thead>
         <tr>
@@ -35,7 +35,7 @@
                     </td>
                     <td>{{ product.name }}</td>
                     <td>{{ item.quantity }}</td>
-                    <td><a href="{% url "cart:cart_remove" product.id %}">Remove</a></td>
+                    <td><a href="{% url "cart:cart_remove" product.id %}">{% trans "Remove" %}</a></td>
                     <td class="num">${{ item.price }}</td>
                     <td class="num">${{ item.total_price }}</td>
                 </tr>
@@ -67,17 +67,31 @@
         </tr>
         </tbody>
     </table>
-    <form action="{% url "coupons:apply" %}" method="post">
-        {{ coupon_apply_form }}
-        <input type="submit" class="button is-success" value="{% trans "Apply" %}">
-        {% csrf_token %}
-    </form>
-    <p class="text-right">
-        <a href="{% url "market:product_list" %}" class="button light">{% trans "Continue shopping" %}</a>
-        {% if cart %}
-            <a href="{% url "orders:order_create" %}" class="button">
-                {% trans "Checkout" %}
-            </a>
-        {% endif %}
-    </p>
+
+    <div class="card">
+        <footer class="card-footer">
+            <div class="is-right">
+                <form action="{% url "coupons:apply" %}" method="post">
+                    {{ coupon_apply_form }}
+                    <input type="submit" class="button is-success is-small" value="{% trans "Apply" %}">
+                    {% csrf_token %}
+                </form>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child notification has-background-white">
+                    <div class="content">
+                        <p class="title"></p>
+                        <div class="content">
+                        </div>
+                    </div>
+                </article>
+                <a href="{% url "market:product_list" %}" class="button has-text-success">{% trans "Continue shopping" %}</a>
+                {% if cart %}
+                    <a href="{% url "orders:order_create" %}" class="button has-text-success">
+                        {% trans "Checkout" %}
+                    </a>
+                {% endif %}
+            </div>
+        </footer>
+    </div>
 {% endblock %}

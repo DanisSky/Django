@@ -1,7 +1,7 @@
 {% load i18n %}
-<nav id="header" class="navbar" role="navigation" aria-label="main navigation">
+<nav id="header" class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand is-success">
-        <a class="navbar-item" href="/">
+        <a class="navbar-item" href="{% url "market:product_list" %}">
             {% trans "My shop" %}
         </a>
     </div>
@@ -37,15 +37,15 @@
         <div class="navbar-item">
             <div class="buttons">
                 {% if request.user.is_authenticated %}
-                    <a class="button is-primary" href="{% url "account:logout" %}">
+                    <a class="button is-info is-light" href="{% url "account:logout" %}">
                         {% trans "Logout" %}
                     </a>
                 {% else %}
-                    <a class="button is-primary" href="{% url "account:signup" %}">
+                    <a class="button is-info is-light" href="{% url "account:signup" %}">
                         <strong>{% trans "Sign up" %}</strong>
                     </a>
 
-                    <a class=" button is-light" href="{% url "account:login" %}">
+                    <a class="button is-info is-light"    href="{% url "account:login" %}">
                         {% trans "Log-in" %}
                     </a>
                 {% endif %}
@@ -55,7 +55,7 @@
             {% get_current_language as LANGUAGE_CODE %}
             {% get_available_languages as LANGUAGES %}
             {% get_language_info_list for LANGUAGES as languages %}
-            <a class="navbar-link">
+            <a class="navbar-item">
                 {% trans "Language" %}:
             </a>
             <div class="navbar-dropdown is-right">

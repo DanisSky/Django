@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-17 17:54+0300\n"
-"PO-Revision-Date: 2021-05-17 18:28+0000\n"
+"POT-Creation-Date: 2021-06-05 19:40+0300\n"
+"PO-Revision-Date: 2021-06-05 19:44+0000\n"
 "Last-Translator: b'  <danis@danis.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,27 +19,155 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.6\n"
 
-#: .\account\templates\account\registration\register.html:25
-msgid "First name"
-msgstr "Имя"
+#: .\account\models.py:15
+msgid "verified"
+msgstr "подтвержденный"
 
-#: .\account\templates\account\registration\register.html:32
-msgid "Last name"
-msgstr "Фамилия"
+#: .\account\models.py:16
+msgid "Unique Verification UUID"
+msgstr "UUID"
 
-#: .\account\templates\account\registration\register.html:39
+#: .\account\models.py:35
+msgid "User"
+msgstr "Пользователь"
+
+#: .\account\models.py:36
+msgid "Users"
+msgstr "Пользователи"
+
+#: .\account\templates\account\profile.html:4
+#: .\account\templates\account\profile.html:7
+#, fuzzy
+#| msgid "My profile"
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\account\templates\account\profile.html:8
+msgid "Welcome to your profile."
+msgstr "Добро пожаловать в ваш профиль."
+
+#: .\account\templates\account\registration\logged_out.html:6
+msgid "Logged out"
+msgstr "Выйти"
+
+#: .\account\templates\account\registration\logged_out.html:7
+msgid "You have been successfully logged out. You can "
+msgstr "Вы успешно вышли. Вы можете"
+
+#: .\account\templates\account\registration\logged_out.html:7
+msgid "login"
+msgstr "войти"
+
+#: .\account\templates\account\registration\logged_out.html:7
+msgid "again."
+msgstr "снова."
+
+#: .\account\templates\account\registration\login.html:7
+msgid "Your username and password didn't match."
+msgstr "Ваше имя пользователя и пароль не найдены."
+
+#: .\account\templates\account\registration\login.html:8
+#: .\account\templates\account\registration\register.html:15
+msgid "Please try again."
+msgstr "Пожалуйста попробуйте снова."
+
+#: .\account\templates\account\registration\login.html:20
+#: .\account\templates\account\registration\register.html:37
 msgid "Email"
 msgstr "Почта"
 
-#: .\account\templates\account\registration\register.html:46
+#: .\account\templates\account\registration\login.html:27
+#: .\account\templates\account\registration\register.html:44
 msgid "Password"
 msgstr "Пароль"
 
-#: .\account\templates\account\registration\register.html:53
+#: .\account\templates\account\registration\login.html:35
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+#: .\account\templates\account\registration\login.html:39
+msgid "Login"
+msgstr "Войти"
+
+#: .\account\templates\account\registration\password_reset.html:12
+msgid "Reset Password"
+msgstr "Пароль"
+
+#: .\account\templates\account\registration\password_reset.html:14
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr "Забыли пароль? Впишите свой почтовый адрес ниже и следуйте инструкции"
+
+#: .\account\templates\account\registration\password_reset.html:18
+#, fuzzy
+msgid "Send email"
+msgstr "Сообщения"
+
+#: .\account\templates\account\registration\password_reset_complete.html:8
+msgid "Password reset complete"
+msgstr "Сброс пароля выполнен"
+
+#: .\account\templates\account\registration\password_reset_complete.html:10
+msgid "Your password has been set. You may go ahead and log in now."
+msgstr "Ваш пароль был установлен. Вы можете войти в систему прямо сейчас."
+
+#: .\account\templates\account\registration\password_reset_complete.html:11
+msgid "Log in"
+msgstr "Вход"
+
+#: .\account\templates\account\registration\password_reset_confirm.html:11
+#, fuzzy
+#| msgid "Password confirmation"
+msgid "Password Reset Confirm"
+msgstr "Подтверждение пароля"
+
+#: .\account\templates\account\registration\password_reset_confirm.html:13
+msgid "Please enter your new password."
+msgstr "Пожалуйста, введите свой новый пароль."
+
+#: .\account\templates\account\registration\password_reset_confirm.html:17
+#, fuzzy
+#| msgid "Password"
+msgid "Reset password"
+msgstr "Пароль"
+
+#: .\account\templates\account\registration\password_reset_done.html:9
+#, fuzzy
+#| msgid "Password confirmation"
+msgid "Password reset sent"
+msgstr "Подтверждение пароля"
+
+#: .\account\templates\account\registration\password_reset_done.html:11
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+"Мы отправили вам по электронной почте инструкции по установке пароля, если "
+"существует учетная запись с введенным вами электронным письмом. Вы должны "
+"получить их в ближайшее время."
+
+#: .\account\templates\account\registration\password_reset_done.html:11
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"Если Вы не получили электронное письмо, пожалуйста, убедитесь, что Вы ввели "
+"адрес, на который зарегистрировались, и проверьте папку со спамом."
+
+#: .\account\templates\account\registration\register.html:23
+msgid "First name"
+msgstr "Имя"
+
+#: .\account\templates\account\registration\register.html:30
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\account\templates\account\registration\register.html:51
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
 
-#: .\account\templates\account\registration\register.html:60
+#: .\account\templates\account\registration\register.html:58
 #: .\templates\parts\_navbar.html:45
 msgid "Sign up"
 msgstr "Зарегистрироваться"
@@ -47,6 +175,12 @@ msgstr "Зарегистрироваться"
 #: .\cart\forms.py:8 .\cart\templates\cart\detail.html:14
 msgid "Quantity"
 msgstr "Количество"
+
+#: .\cart\templates\cart\detail.html:5
+#, fuzzy
+#| msgid "Your cart:"
+msgid "Your shopping cart"
+msgstr "Ваша корзина:"
 
 #: .\cart\templates\cart\detail.html:12
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:375
@@ -59,7 +193,7 @@ msgstr "Изображение"
 msgid "Product"
 msgstr "Продукты"
 
-#: .\cart\templates\cart\detail.html:15
+#: .\cart\templates\cart\detail.html:15 .\cart\templates\cart\detail.html:38
 msgid "Remove"
 msgstr "Убрать"
 
@@ -71,34 +205,66 @@ msgstr "Цена за единицу"
 msgid "Price"
 msgstr "Цена"
 
-#: .\cart\templates\cart\detail.html:72
+#: .\cart\templates\cart\detail.html:76
 msgid "Apply"
 msgstr "Подтвердить"
 
-#: .\cart\templates\cart\detail.html:76
+#: .\cart\templates\cart\detail.html:88
 msgid "Continue shopping"
 msgstr "Продолжить покупки"
 
-#: .\cart\templates\cart\detail.html:79
+#: .\cart\templates\cart\detail.html:91
 msgid "Checkout"
 msgstr "Оформить"
 
+#: .\market\models.py:15
+#, fuzzy
+#| msgid "Categories"
+msgid "Category"
+msgstr "Категории"
+
+#: .\market\models.py:16 .\market\templates\market\product\list.html:14
+msgid "Categories"
+msgstr "Категории"
+
+#: .\market\models.py:31
+msgid "description"
+msgstr "описание"
+
+#: .\market\models.py:32
+#, fuzzy
+#| msgid "Price"
+msgid "price"
+msgstr "Цена"
+
+#: .\market\models.py:33
+msgid "stock"
+msgstr "наличие"
+
+#: .\market\models.py:34
+msgid "available"
+msgstr "доступные"
+
 #: .\market\templates\market\product\detail.html:5
-#: .\market\templates\market\product\list.html:35
+#: .\market\templates\market\product\list.html:34
 msgid "Products"
 msgstr "Продукты"
 
-#: .\market\templates\market\product\detail.html:18
+#: .\market\templates\market\product\detail.html:24
 msgid "Add to cart"
 msgstr "Добавить в корзину"
 
-#: .\market\templates\market\product\detail.html:21
+#: .\market\templates\market\product\detail.html:31
 msgid "Reviews"
 msgstr "Отзывы"
 
-#: .\market\templates\market\product\list.html:14
-msgid "Categories"
-msgstr "Категории"
+#: .\market\templates\market\product\detail.html:84
+msgid "Submit"
+msgstr "Подтвердить"
+
+#: .\market\templates\market\product\detail.html:89
+msgid "Please sign in to add review!"
+msgstr "Пожалуйста, войдите, чтобы добавить отзыв!"
 
 #: .\market\templates\market\product\list.html:19
 msgid "All"
@@ -108,19 +274,25 @@ msgstr "Все"
 msgid "View"
 msgstr "Посмотреть"
 
-#: .\templates\parts\_footer.html:5
-msgid "My Shop"
-msgstr "Магазин"
-
-#: .\templates\parts\_footer.html:8
+#: .\templates\parts\_footer.html:7
 #, fuzzy
 #| msgid "About"
 msgid "About Us"
 msgstr "Про нас"
 
-#: .\templates\parts\_footer.html:17
-msgid "Important"
-msgstr "Важно"
+#: .\templates\parts\_footer.html:8
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+" quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
+"consequat."
+msgstr ""
+
+#: .\templates\parts\_footer.html:12
+#, fuzzy
+#| msgid "Contact"
+msgid "Contact us"
+msgstr "Контакты"
 
 #: .\templates\parts\_header.html:6 .\templates\parts\_navbar.html:5
 msgid "My shop"
@@ -171,13 +343,32 @@ msgstr "Войти"
 msgid "Language"
 msgstr "Язык"
 
+#: .\venv\Lib\site-packages\crispy_forms\tests\test_form_helper.py:129
+#: .\venv\Lib\site-packages\crispy_forms\tests\test_form_helper.py:139
+#: .\venv\Lib\site-packages\django\forms\fields.py:54
+msgid "This field is required."
+msgstr "Это поле является обязательным."
+
+#: .\venv\Lib\site-packages\crispy_forms\tests\test_layout.py:391
+msgid "i18n text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\crispy_forms\tests\test_layout.py:393
+msgid "i18n legend"
+msgstr ""
+
+#: .\venv\Lib\site-packages\crispy_forms\tests\test_layout_objects.py:134
+#: .\venv\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
 msgid "Messages"
 msgstr "Сообщения"
 
 #: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
 msgid "Site Maps"
-msgstr ""
+msgstr "Навигация по сайту"
 
 #: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
 msgid "Static Files"
@@ -185,7 +376,7 @@ msgstr "Статические файлы"
 
 #: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
 msgid "Syndication"
-msgstr ""
+msgstr "Синдикация"
 
 #. Translators: String used to replace omitted page numbers in elided page
 #. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
@@ -203,10 +394,6 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:58
 msgid "That page contains no results"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:22
-msgid "Enter a valid value."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:93
@@ -605,10 +792,6 @@ msgstr ""
 msgid ":?.!"
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:54
-msgid "This field is required."
-msgstr ""
-
 #: .\venv\Lib\site-packages\django\forms\fields.py:247
 msgid "Enter a whole number."
 msgstr ""
@@ -730,7 +913,7 @@ msgstr[3] ""
 #: .\venv\Lib\site-packages\django\forms\formsets.py:405
 #: .\venv\Lib\site-packages\django\forms\formsets.py:412
 msgid "Order"
-msgstr ""
+msgstr "Заказ"
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:417
 msgid "Delete"
@@ -1380,17 +1563,28 @@ msgstr ""
 msgid "Unable to connect to qpid with SASL mechanism %s"
 msgstr ""
 
-#: .\website\settings.py:119
+#: .\website\settings.py:120
 msgid "English"
 msgstr "Английский"
 
-#: .\website\settings.py:120
+#: .\website\settings.py:121
 msgid "Russian"
 msgstr "Русский"
 
-#, fuzzy
-#~ msgid "Send Message"
-#~ msgstr "Сообщения"
+#~ msgid "Please, use the following form to log-in:"
+#~ msgstr "Пожалуйста, используйте предложенную форму что бы войти:"
+
+#~ msgid "Register"
+#~ msgstr "Регистрация"
+
+#~ msgid "Please, use the following form to register:"
+#~ msgstr "Пожалуйста, используйте следующую форму для регистрации:"
+
+#~ msgid "My Shop"
+#~ msgstr "Магазин"
+
+#~ msgid "Important"
+#~ msgstr "Важно"
 
 #, fuzzy
 #~ msgid "Russia"
@@ -1401,6 +1595,3 @@ msgstr "Русский"
 
 #~ msgid "No reviews yet..."
 #~ msgstr "Отзывов еще нет..."
-
-#~ msgid "Contact"
-#~ msgstr "Контакты"

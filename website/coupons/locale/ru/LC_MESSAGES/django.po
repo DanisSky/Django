@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-17 17:54+0300\n"
+"POT-Creation-Date: 2021-06-05 19:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,3 +23,15 @@ msgstr ""
 #: .\coupons\forms.py:6
 msgid "Coupon"
 msgstr "Купон"
+
+#: .\coupons\models.py:7
+msgid "code"
+msgstr ""
+
+#: .\coupons\models.py:10
+msgid "discount"
+msgstr ""
+
+#: .\coupons\models.py:11
+msgid "active"
+msgstr ""

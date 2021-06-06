@@ -8,6 +8,8 @@ from .models import Category, Product, ProductReview
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug']
     prepopulated_fields = {'slug': ('name',)}
+    list_filter = ['slug']
+    search_fields = ['name']
 
 
 @admin.register(Product)

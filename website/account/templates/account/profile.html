@@ -1,11 +1,41 @@
 {% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load i18n %}
 
-{% block title %}Profile{% endblock %}
+{% block title %}{% trans "Profile" %}{% endblock %}
 
 {% block content %}
-    <h1>Profile</h1>
-    <p>Welcome to your profile.</p>
+    <h1 class="is-size-3">{% trans "Welcome to your profile." %}</h1>
+    <div class="box">
+        <article class="media">
+            <div class="media-left">
+                <figure class="image is-64x64">
+                    <img src="{% if profile.photo %}{{ profile.photo.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt="">
+                </figure>
+            </div>
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong>{{ user.username }}</strong> <small></small> <small></small>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
 
-    {% load crispy_forms_tags %}
-
+    <hr>
+    <div class="box">
+        <article class="media">
+            <div class="media-left">
+                {% load crispy_forms_tags %}
+                <form action="{% url "account:profile" %}" method="post" enctype="multipart/form-data">
+                    {{ form|crispy }}
+                    {% csrf_token %}
+                    <button type="submit" value="send">Add</button>
+                </form>
+            </div>
+        </article>
+    </div>
 {% endblock %}

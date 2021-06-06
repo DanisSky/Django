@@ -1,14 +1,14 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block title %}Log-in{% endblock %}
 {% block content %}
-    <h1>Log-in</h1>
     {% if form.errors %}
         <p>
-            Your username and password didn't match.
-            Please try again.
+            {% trans "Your username and password didn't match." %}
+            {% trans "Please try again." %}
         </p>
     {% else %}
-        <p>Please, use the following form to log-in:</p>
+
     {% endif %}
     <section class="hero is-primary is-fullheight">
         <div class="hero-body">
@@ -17,14 +17,14 @@
                     <div class="column is-5-tablet is-4-desktop is-3-widescreen">
                         <form action="{% url 'account:login' %}" method="post" class="box">
                             <div class="field">
-                                <label for="" class="label">Email</label>
+                                <label for="" class="label">{% trans "Email" %}</label>
                                 <div class="control has-icons-left">
                                     {{ form.username }}
                                     <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
                                 </div>
                             </div>
                             <div class="field">
-                                <label for="" class="label">Password</label>
+                                <label for="" class="label">{% trans "Password" %}</label>
                                 <div class="control has-icons-left">
                                     {{ form.password }}
                                     <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
@@ -32,11 +32,20 @@
                             </div>
                             <div class="field">
                                 <label for="" class="checkbox">
-                                    <input type="checkbox"> Remember me
+                                    <input type="checkbox"> {% trans "Remember me" %}
                                 </label>
                             </div>
                             <div class="field">
-                                <button class="button is-success">Login</button>
+                                <label for="" class="">
+                                    <ul>
+                                        <li><a href="{% url 'account:password_reset' %}">{% trans "Restore Password" %}</a>
+                                        </li>
+                                    </ul>
+
+                                </label>
+                            </div>
+                            <div class="field">
+                                <button class="button has-background-info-dark has-text-white">{% trans "Login" %}</button>
                             </div>
                             {% csrf_token %}
                             <input type="hidden" name="next" value="{{ next }}"/>
