@@ -146,7 +146,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 CART_SESSION_ID = 'cart'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-STATIC_ROOT = '/home/myprojectenv/Django/website/static/'
+STATIC_ROOT = '/home/myprojectenv/Django/website/staticfiles/'
 
 LOGIN_REDIRECT_URL = reverse_lazy('account:profile')
 LOGIN_URL = reverse_lazy('account:login')
