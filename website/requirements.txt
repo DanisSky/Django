@@ -1,0 +1,36 @@
+amqp==5.0.6; python_version >= "3.6"
+asgiref==3.3.4; python_version >= "3.6"
+billiard==3.6.4.0; python_version >= "3.6"
+celery==5.0.5; python_version >= "3.6"
+certifi==2021.5.30; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+chardet==4.0.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+click-didyoumean==0.0.3; python_version >= "3.6"
+click-plugins==1.1.1; python_version >= "3.6"
+click-repl==0.2.0; python_version >= "3.6"
+click==7.1.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
+dj-database-url==0.5.0
+django-crontab==0.7.1
+django-heroku==0.3.1
+django-parler==2.2
+django-rosetta==0.9.6
+django==3.2.4; python_version >= "3.6"
+gunicorn==20.1.0; python_version >= "3.5"
+idna==2.10; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+kombu==5.1.0; python_version >= "3.6"
+numpy==1.20.3; python_version >= "3.7" and python_full_version >= "3.7.1"
+pandas==1.2.4; python_full_version >= "3.7.1"
+pillow==8.2.0; python_version >= "3.6"
+polib==1.1.1
+prompt-toolkit==3.0.18; python_full_version >= "3.6.1" and python_version >= "3.6"
+psycopg2-binary==2.8.6; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.4.0")
+psycopg2==2.8.6; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
+python-dateutil==2.8.1; python_full_version >= "3.7.1"
+pytz==2021.1; python_full_version >= "3.7.1" and python_version >= "3.6"
+redis==3.5.3; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
+requests==2.25.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+six==1.16.0; python_full_version >= "3.7.1" and python_version >= "3.6"
+sqlparse==0.4.1; python_version >= "3.6"
+urllib3==1.26.5; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4"
+vine==5.0.0; python_version >= "3.6"
+wcwidth==0.2.5; python_full_version >= "3.6.1" and python_version >= "3.6"
+whitenoise==5.2.0; python_version >= "3.5" and python_version < "4"
