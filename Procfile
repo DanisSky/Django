@@ -1,1 +1,1 @@
-web: gunicorn website.wsgi
+web: cd website && gunicorn --preload website.website.wsgi
