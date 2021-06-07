@@ -14,7 +14,7 @@ django-crispy-forms = "^1.11.2"
 unicodecsv = "^0.14.1"
 beautifultable = "^1.0.1"
 django-parler = "^2.2"
-django-celery = "^3.3.1"
+celery = "5.0.5"
 
 [tool.poetry.dev-dependencies]
 
