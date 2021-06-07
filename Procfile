@@ -1,1 +1,1 @@
-web: cd website && gunicorn --preload website.website.wsgi
+web: cd website && gunicorn --preload website.website.wsgi --log-file -
