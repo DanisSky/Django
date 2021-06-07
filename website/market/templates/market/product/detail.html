@@ -7,31 +7,52 @@
 {% block content %}
     <div class="container p-5">
         <div class="columns">
-            <div class="column is-four-fifths">
+            <div class="column is-two-thirds">
                 <br>
                 <br>
                 <figure class="image">
                     <img src="
-                            {% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
+{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"
                          class="card-img-top" style="width: 50%">
                 </figure>
                 <br>
                 <br>
             </div>
             <div class="column">
-                <div class="is-centered">
-                <div class="product__detail__card__about">
-                    <h1>{{ product.name }}</h1>
-                    <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
-                    <p class="price">${{ product.price }}</p>
-                    {{ product.description|linebreaks }}
-                    <form action="{% url "cart:cart_add" product.id %}" method="post">
-                        {{ cart_product_form }}
-                        {% csrf_token %}
-                        <input type="submit" value="{% trans "Add to cart" %}">
-                    </form>
-                </div>
+                <div class="tile ">
+                    <div class="is-centered">
+                        <br>
+                        <br>
+                        <h1>{% trans "Poduct name:" %}</h1>
+                        <h1>{% trans "Category:" %}</h1>
+                        <h1>{% trans "Price:" %}</h1>
+                        <h1>{% trans "Description:" %}</h1>
+                        <br>
+                        <br>
                     </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="tile">
+                    <div class="is-centered">
+                        <div class="product__detail__card__about">
+                            <br>
+                            <br>
+                            <h1>{{ product.name }}</h1>
+                            <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+                            <p class="price">${{ product.price }}</p>
+                            {{ product.description|linebreaks }}
+                            <form action="{% url "cart:cart_add" product.id %}" method="post">
+                                {{ cart_product_form }}
+                                {% csrf_token %}
+                                <input type="submit" class="button is-small is-primary"
+                                       value="{% trans "Add to cart" %}">
+                            </form>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -53,7 +74,7 @@
                 </div>
             {% endfor %}
         </div>
-
+        <hr>
         <div class="notification space-below">
             {% if request.user.is_authenticated %}
                 <form method="post" action=".">

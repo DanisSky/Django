@@ -10,12 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+from configparser import RawConfigParser
 from pathlib import Path
 
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
-import django_heroku
+
+config = RawConfigParser()
+config.read('settings/config.ini')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -88,10 +92,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Django',
-        'USER': 'postgres',
-        'PASSWORD': 'qwerty',
-        'HOST': '',
-        'PORT': '5432',
+        'USER': config.get('db', 'user'),
+        'PASSWORD': config.get('db', 'password'),
+        'HOST': config.get('db', 'host'),
+        'PORT': config.get('db', 'port'),
     }
 }
 
@@ -149,17 +153,17 @@ LOGOUT_URL = reverse_lazy('account:logout')
 
 # Redis
 REDIS_HOST = 'localhost'
-REDIS_PORT = '6379'
+REDIS_PORT = config.get('redis', 'port')
 BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
 CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 
 # Email
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'dyingpopcorn@gmail.com'
-EMAIL_HOST_PASSWORD = 'Qwert007'
-EMAIL_PORT = 587
+EMAIL_HOST = config.get('smtp', 'host')
+EMAIL_HOST_USER = config.get('smtp', 'host_user')
+EMAIL_HOST_PASSWORD = config.get('smtp', 'host_password')
+EMAIL_PORT = config.get('smtp', 'port')
 CELERY_TASK_ALWAYS_EAGER = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
