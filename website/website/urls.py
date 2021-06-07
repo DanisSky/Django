@@ -26,7 +26,7 @@ urlpatterns = i18n_patterns(
     path('cart/', include('cart.urls', namespace='cart')),
     path('account/', include('account.urls', namespace='account')),
     path('order/', include('order.urls', namespace='orders')),
-    path('rosetta/', include('rosetta.urls')),
+   # path('rosetta/', include('rosetta.urls')),
     path('coupons/', include('coupons.urls', namespace='coupons')),
     path('', include('market.urls', namespace='market'))
 )
