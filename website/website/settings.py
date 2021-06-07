@@ -15,6 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
+import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -164,3 +165,5 @@ CELERY_TASK_ALWAYS_EAGER = True
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+django_heroku.settings(locals())

@@ -1,7 +1,6 @@
 from celery.utils.log import get_task_logger
 from django.db.models import F, Q
 
-
 from market.models import Product
 from website.celery import app
 
